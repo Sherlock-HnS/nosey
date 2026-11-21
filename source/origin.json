@@ -4,8 +4,8 @@
   "title": "[PILL PACK] Nosey",
   "author": "Dylansonfire",
   "status": "extracted_verified",
-  "acquisition": "existing_steam_client_installation",
-  "steamcmd_download_completed": false,
+  "acquisition": "steamcmd",
+  "steamcmd_download_completed": true,
   "source_workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3574746535",
   "source_archive_sha256": "8598f3d6e72828ed55167ac7e25f57803d5b91fac5eeec37b2cc4a0c8724a57a",
   "gma_header": {
