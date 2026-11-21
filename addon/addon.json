@@ -1,10 +1,9 @@
 {
-  "ignore": [],
+  "title": "[PILL PACK] Nosey",
+  "type": "npc",
   "tags": [
     "fun",
-    "roleplay",
-    "scenic"
+    "roleplay"
   ],
-  "title": "[PILL PACK] Nosey",
-  "type": "npc"
+  "ignore": []
 }
