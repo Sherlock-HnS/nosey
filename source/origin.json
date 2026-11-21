@@ -1,0 +1,22 @@
+{
+  "id": "3574746535",
+  "name": "nosey",
+  "title": "[PILL PACK] Nosey",
+  "author": "Dylansonfire",
+  "status": "extracted_verified",
+  "acquisition": "existing_steam_client_installation",
+  "steamcmd_download_completed": false,
+  "source_workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3574746535",
+  "source_archive_sha256": "8598f3d6e72828ed55167ac7e25f57803d5b91fac5eeec37b2cc4a0c8724a57a",
+  "gma_header": {
+    "title": "[PILL PACK] Nosey",
+    "description": "{\"title\":\"[PILL PACK] Nosey\",\"type\":\"npc\",\"tags\":[\"fun\",\"roleplay\",\"scenic\"],\"ignore\":[]}",
+    "author": "Author Name",
+    "steam_id": "0",
+    "timestamp": 1758836087
+  },
+  "files": 22,
+  "payload_bytes": 22417434,
+  "roundtrip_verified": true,
+  "packaging_exclusions": []
+}

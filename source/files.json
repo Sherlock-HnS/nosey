@@ -1,0 +1,134 @@
+[
+  {
+    "path": "lua/autorun/walterfiles_nosey.lua",
+    "size": 692,
+    "crc": 3397330628,
+    "sha256": "62eb5054a8fc78d987438e26a6b1e790533c0301500da9d8540f3f281d3f9bdc"
+  },
+  {
+    "path": "lua/autorun/include/walterfiles_nosey.lua",
+    "size": 50724,
+    "crc": 3332825980,
+    "sha256": "c8491fde5cdf1d41ce9277b08bca2653df1bb81dad887ee3431ef93d5b31ec13"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/casingnosy.vmt",
+    "size": 506,
+    "crc": 821698343,
+    "sha256": "31784c884d28f0a5d378a14d2964b43e2fd1b63efe0bf31e2f16708d0a5b1787"
+  },
+  {
+    "path": "materials/icons/noseyscan.png",
+    "size": 492185,
+    "crc": 3025129336,
+    "sha256": "4540d18d028f52b49cca6191d729bf88b1ecdfe2595a63aea9ff90f053dbf694"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/eye.vmt",
+    "size": 493,
+    "crc": 4180205949,
+    "sha256": "fc80672875c6c86a8fdec20d03fac0df0bf5d3bd90230ea12fc3d45f63880915"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/no_material.vmt",
+    "size": 502,
+    "crc": 4008791936,
+    "sha256": "46b8550a04b14c0991d4fd8331a3eba1727fba37b05880182644d94c2e134f65"
+  },
+  {
+    "path": "models/gentoi/walterfiles/nosey.phy",
+    "size": 30930,
+    "crc": 482251585,
+    "sha256": "5cd9391a4b59adc673f0e2cf40814931f70b827ec37ae74ca90842b02ae290ca"
+  },
+  {
+    "path": "materials/pills/pill_gentoi_nosey.png",
+    "size": 818914,
+    "crc": 2952597741,
+    "sha256": "3d0dbdaeedc905c7e86707e24e9e85b4a28a8483c7d6096b6c9aafae24df2771"
+  },
+  {
+    "path": "models/gentoi/walterfiles/nosey.dx90.vtx",
+    "size": 470706,
+    "crc": 3180631077,
+    "sha256": "3484f10fd8f994654252d9fe642119a34050c04b8b0252f01a1225758c3e7576"
+  },
+  {
+    "path": "models/gentoi/walterfiles/nosey.mdl",
+    "size": 757252,
+    "crc": 887726371,
+    "sha256": "b2ddfdda078da1aff60e2a315103d336c6fae144a032798a7f07664784c39d00"
+  },
+  {
+    "path": "sound/nosey/nosey_footstep5.wav",
+    "size": 272134,
+    "crc": 912527311,
+    "sha256": "e39500208e7d9560e712ef7f56c7c032c6d97c0d09360736f66fdd2ee546f4d6"
+  },
+  {
+    "path": "sound/nosey/nosey_footstep2.wav",
+    "size": 276726,
+    "crc": 3689493367,
+    "sha256": "eb07323e9c2048f771e7862a498a3d9d4ef1304a7dbf37b4db81c7a3799e3ec6"
+  },
+  {
+    "path": "sound/nosey/nosey_footstep3.wav",
+    "size": 292346,
+    "crc": 165647968,
+    "sha256": "e02b53f3d137c9e307dd024a7c06a8566474f1b4d54d35eff0c1a645815eb5f8"
+  },
+  {
+    "path": "sound/nosey/nosey_footstep1.wav",
+    "size": 280402,
+    "crc": 942886523,
+    "sha256": "7c4d2368f184caae640172cba160035475165f8f1648a00535e5a023a0faed7e"
+  },
+  {
+    "path": "sound/nosey/nosey_footstep4.wav",
+    "size": 295102,
+    "crc": 1639003941,
+    "sha256": "0365e46a466816ccbe65ad27f334afa905a88124ece72cae8d0460a63097f5f9"
+  },
+  {
+    "path": "sound/nosey/echolocation.wav",
+    "size": 753742,
+    "crc": 2958474641,
+    "sha256": "62f670d8d7c6d28a2014f08aed162a56caf3a2f115b21fd68d6b52f86bac8f7e"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/eye2_n.vtf",
+    "size": 1398352,
+    "crc": 33705481,
+    "sha256": "87309a00caad10e024c33610191c13d5e01f41899e1b981cd19544ac435b592f"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/eye2.vtf",
+    "size": 1398352,
+    "crc": 207015823,
+    "sha256": "2b899938e677444d7ebb0aa8674678bc2839214582c89915d31e2ab1455c55e3"
+  },
+  {
+    "path": "sound/nosey/noseyexecution.wav",
+    "size": 1577038,
+    "crc": 1537200738,
+    "sha256": "dbe9db27fb23594b5cd0c5714979fd32768bebac005e05632e461174d295fe47"
+  },
+  {
+    "path": "models/gentoi/walterfiles/nosey.vvd",
+    "size": 2065024,
+    "crc": 2718839802,
+    "sha256": "1437cd52576203b345790cb46a6c6e295c9fa9385623ff617a6bfd8f2512418d"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/casingnosy.vtf",
+    "size": 5592656,
+    "crc": 2053742196,
+    "sha256": "b7e057897dd66ab519fc4d1977fea1a66a35afedfa27496d83d53d5cbfd5af40"
+  },
+  {
+    "path": "materials/models/gentoi/walterfiles/nosey/casingnormal.vtf",
+    "size": 5592656,
+    "crc": 1817096912,
+    "sha256": "ec1616ad4f2cc1bf01e45ea91b5fa832f0bff26c6275795a5842120291e644fb"
+  }
+]
