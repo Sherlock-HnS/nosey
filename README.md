@@ -1,4 +1,4 @@
-[PILL PACK] Nosey
+# [PILL PACK] Nosey
 
 ![Workshop preview](workshop-preview.jpg)
 
