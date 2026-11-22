@@ -53,13 +53,10 @@ hook.Add("OnEntityCreated", "Nosey_gentoi_iniatlize", function(ent)
                         end
 
                         if self.animFreeze and not self.plyFrozen then
-                            ply:SetWalkSpeed(ply:GetWalkSpeed() / 2)
-                            ply:SetRunSpeed(ply:GetWalkSpeed() / 2)
+                            self:ApplyMoveSpeed()
                             self.plyFrozen = true
                         elseif not self.animFreeze and self.plyFrozen then
-                            local speed = self.formTable.moveSpeed or {}
-                            ply:SetWalkSpeed(speed.walk or 200)
-                            ply:SetRunSpeed(speed.run or speed.walk or 500)
+                            self:ApplyMoveSpeed()
                             self.plyFrozen = nil
                         end
 
@@ -221,7 +218,7 @@ hook.Add("OnEntityCreated", "Nosey_gentoi_iniatlize", function(ent)
                         --water death
                         self.touchingWater = ply:WaterLevel() > 1
 
-                        if (self.formTable.damageFromWater and self.touchingWater) then
+                        if not SherlockHNS and self.formTable.damageFromWater and self.touchingWater then
                             if self.formTable.damageFromWater == -1 then
                                 --self:PillDie()
                                 ply:Kill()
@@ -272,7 +269,7 @@ hook.Add("OnEntityCreated", "Nosey_gentoi_iniatlize", function(ent)
                         end
 
                         --charge
-                        if self:GetChargeTime() ~= 0 then
+                        if not SherlockHNS and self:GetChargeTime() ~= 0 then
                             if ply:OnGround() then
                                 local charge = self.formTable.charge
                                 local angs = ply:EyeAngles()
@@ -637,6 +634,7 @@ else
 
     hook.Add("HUDPaint", "Nosey_pill_painting", function()
 
+        if SherlockHNS then return end
         local ply = LocalPlayer()
         local pillentity = LocalPlayer().pk_pill_ent
         local screenW, screenH = ScrW(), ScrH()
@@ -772,6 +770,13 @@ local function racheljackietien_jumpscare(ply, ent, duration, customanimstuff)
                 break
             end
         end
+    end
+
+    if SherlockHNS and IsValid(jumpscare_entity) and jumpscare_entity:IsPlayer() then
+        return pk_pills.playHNSJumpscare(ply, ent, jumpscare_entity, duration, {
+            camera = "nosey_jumpscare_gen",
+            onStart = customanimstuff,
+        })
     end
 
     if jumpscare_entity ~= nil then
@@ -1105,6 +1110,7 @@ pk_pills.register('pill_gentoi_nosey', {
         if event == "echolocation" then
             ent:SetNWInt('lasttimeusedNOSEYSCAN',CurTime()+7)
             ent:SetNWInt('lasttimeusedNOSEYSCANCooldown',CurTime()+21)
+            pk_pills.setHNSCooldown(ent, "scan", ent:GetNWInt("lasttimeusedNOSEYSCANCooldown") - CurTime())
             net.Start("nosey_scanmap")
             net.WriteEntity(ent)
             net.Send(ply)
@@ -1118,12 +1124,13 @@ pk_pills.register('pill_gentoi_nosey', {
 
             local dur = ent:GetPuppet():SequenceDuration(ent:GetPuppet():LookupSequence("kill"))
             if ply:GetNWInt("DisableMovement_jumpscare_pill_nosey") < CurTime() then
-                racheljackietien_jumpscare(
+                return racheljackietien_jumpscare(
                     ply,
                     ent,
                     dur,
                     function()
                         ent:SetNWInt('lasttimeusedNOSEYSCANCooldown',ent:GetNWInt('lasttimeusedNOSEYSCANCooldown',0)-4)
+                        pk_pills.setHNSCooldown(ent, "scan", ent:GetNWInt("lasttimeusedNOSEYSCANCooldown") - CurTime())
                         ent:PillSound('kill')
                         ent:PillAnim('kill')
                     end
@@ -1188,4 +1195,14 @@ pk_pills.register('pill_gentoi_nosey', {
             end
         end
     end
-})
+}, function(form)
+    -- The legacy damage branches are for Sandbox and NPCs.
+    form.hnsKillAPI = true
+    form.hnsAbilities = {
+        { id = "attack", name = "Ataque", key = IN_ATTACK, OnUse = form.attack.func },
+    }
+    form.attack, form.attack2, form.reload = nil, nil, nil
+    pk_pills.bindHNSButtons(form, "NoseyKeybind", {
+        { id = "scan", name = "Ecolocalização", button = KEY_1, keyLabel = "1" },
+    })
+end)
