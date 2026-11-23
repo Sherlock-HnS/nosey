@@ -11,7 +11,7 @@ end)
 
 hook.Add("PlayerButtonDown", "DetectUseKey_Nosey", function(ply, button)
     local pillentity = ply.pk_pill_ent
-    if IsValid(pillentity) then
+    if IsValid(pillentity) and pillentity.formTable then
         if pillentity.formTable.NoseyKeybind then
             pillentity.formTable.NoseyKeybind(ply, pillentity, button)
         end
@@ -21,7 +21,7 @@ end)
 hook.Add("OnEntityCreated", "Nosey_gentoi_iniatlize", function(ent)
     timer.Simple(0.01, function()
         if !IsValid(ent) then return end
-        if ent:GetClass() ~= "pill_ent_costume" then return end
+        if ent:GetClass() ~= "pill_ent_costume" or not ent.formTable then return end
 
 
         if ent.formTable then
@@ -36,7 +36,7 @@ hook.Add("OnEntityCreated", "Nosey_gentoi_iniatlize", function(ent)
                 ent.Think = function()
                     local ply = self:GetPillUser()
                     local puppet = self:GetPuppet()
-                    if not IsValid(puppet) or not IsValid(ply) then return end
+                    if not IsValid(puppet) or not IsValid(ply) or not self.formTable then return end
                     local vel = ply:GetVelocity():Length()
 
                     if SERVER then
@@ -438,6 +438,7 @@ hook.Add("OnEntityCreated", "Nosey_gentoi_iniatlize", function(ent)
 
             if IsValid(PuppetEntity) then
                 function PuppetEntity:AcceptInput(inputName, activator, caller, data)
+                    if not IsValid(ent) or not ent.formTable or not ent.formTable.HandleAnimEvent_g_nosey then return end
                     ent.formTable.HandleAnimEvent_g_nosey(entityply, ent, inputName)
                     return true
                 end
@@ -454,7 +455,7 @@ hook.Add("Think", "nosey_gentoi_think", function()
 
         if not IsValid(puppet) or not IsValid(ply) then continue end
 
-        if ent.formTable.nosey_gentoi_think then
+        if ent.formTable and ent.formTable.nosey_gentoi_think then
             ent.formTable.nosey_gentoi_think(ply, ent)
         end
     end
